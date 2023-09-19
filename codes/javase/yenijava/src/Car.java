@@ -10,8 +10,6 @@ public class Car {
         System.out.println("How are you");
     }
 
-
-
     String brand;
     String model;
     String price;

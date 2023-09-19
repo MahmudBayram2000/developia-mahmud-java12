@@ -14,7 +14,8 @@ public class CarProperties {
         RangeRover.color="White";
         RangeRover.model="Range Rover2020";
 
-        System.out.println(Bmw.price+Bmw.brand+Bmw.color+Bmw.model);
+        System.out.println(Bmw.price +" " +Bmw.brand+ " " +Bmw.color+ " "+Bmw.model);
+
 
 
     }
