@@ -1,14 +1,25 @@
 package ArraysDemo;
 
-public class arraysDemo3 {
+public class ArraysDemo6 {
     public static void main(String[] args) {
 
-        int[] numbers = {5, 10, 15, 20, 25, 30, 35};
+        int[] numbers = {6, 7, 8, 9, 12};
 
         for (int number : numbers) {
-            if (number % 2 != 0) {
+            if (number % 2 != 0){
                 System.out.println(number);
             }
         }
-    }
-}
+
+              }
+          }
+
+
+
+
+
+
+
+
+
+
