@@ -19,7 +19,6 @@ public class StringBuilderCodes {
         char c=str.charAt(12);
         System.out.println(c);
         System.out.println(str.length());  //uzunlugunu tapir
-
         System.out.println(str.substring(0,6)); //alt setirini tapmaq
 
 
