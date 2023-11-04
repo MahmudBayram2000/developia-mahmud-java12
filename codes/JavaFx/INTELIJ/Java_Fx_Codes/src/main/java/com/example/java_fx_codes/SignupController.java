@@ -1,18 +1,12 @@
 package com.example.java_fx_codes;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 
 public class SignupController {
-    @FXML
-    private Label welcomeText;
 
     @FXML
     private TextField name;
@@ -21,45 +15,68 @@ public class SignupController {
     private TextField surname;
 
     @FXML
-    private  TextField adress;
+    private TextField address;
 
     @FXML
     private TextField phone;
 
     @FXML
-    private TextField email;
-
+    private TextField usernameTF;
 
     @FXML
-    protected void onSave() {
-        String fakename = "Mahmud";
-        String fakesurname = "Bayramov";
-        String fakeadress ="Nefchiler";
-        String fakephone="0508508587";
-        String fakeemail="mahmudbayramov371@gmail.com";
-        String inputname=name.getText();
-        String inputsurname=surname.getText();
-        String inputadress=adress.getText();
-        String inputphone=phone.getText();
-        String inputemail=email.getText();
-        if (fakename.equals(inputname) && fakesurname.equals(inputsurname) && fakeadress.equals(inputadress) && fakephone.equals(inputphone) && fakeemail.equals(inputemail)){
-            System.out.println("Saved");
+    private PasswordField passwordPF;
+
+    @FXML
+    private Label messageLabel;
+
+    @FXML
+    protected void onSave() throws Exception {
+
+        String nameD = name.getText();
+        String surnameD = surname.getText();
+        String addressD = address.getText();
+        String phoneD = phone.getText();
+        String username = usernameTF.getText();
+        String password = passwordPF.getText();
+
+// check teacher data validation
+        if (nameD.length() < 2) {
+            messageLabel.setText("Ad min 2 simvol olmalidir");
+            return;
         }
-        else
-            System.out.println("Not Saved");
+
+        if (surnameD.length() < 2) {
+            messageLabel.setText("Soyad min 2 simvol olmalidir");
+            return;
+        }
+
+        if (username.length() < 2) {
+            messageLabel.setText("username min 2 simvol olmalidir");
+            return;
+        }
+        if (password.length() < 2) {
+            messageLabel.setText("Parol min 2 simvol olmalidir");
+            return;
+        }
+
+        // check if username already exists
+        SignupService service = new SignupService();
+        boolean exists = service.checkUsername(username);
+        if (exists) {
+            messageLabel.setText("bu username artiq istifade olunub");
+            return;
+        }
+
+        // save data
+        Teacher t = new Teacher(0, nameD, surnameD, addressD, phoneD, "");
+        t.setUsername(username);
+        t.setPassword(password);
+        service.save(t);messageLabel.setText("qeydiyyat getdi");
 
     }
-    @FXML
-protected void onSignup() throws  Exception{
-    Stage stage=new Stage();
-    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup.fxml"));
-    Scene scene = new Scene(fxmlLoader.load() );
-    stage.setTitle("New teacher page");
-    stage.setScene(scene);
-    stage.show();
 
 }
 
-}
+
 
 

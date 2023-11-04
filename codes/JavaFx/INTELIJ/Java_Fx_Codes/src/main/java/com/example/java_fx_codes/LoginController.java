@@ -8,39 +8,39 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
 public class LoginController {
-    @FXML
-    private Label welcomeText;
 
     @FXML
-    private TextField Username;
+    private TextField username;
 
     @FXML
-    private PasswordField Password;
+    private PasswordField password;
 
     @FXML
     protected void onLogin() {
-        String fakeusername = "Mahmud";
-        String fakepassword = "123";
-        String inputusername = Username.getText();
-        String inputpassword = Password.getText();
-        if (fakeusername.equals(inputusername) && fakepassword.equals(inputpassword)) {
-            System.out.println("Complete");
-        } else
-            System.out.println("Error");
+        String fakeUsername="Mahmud";
+        String fakePass="123";
+
+        String inputUsername=username.getText();
+        String inputPassword=password.getText();
+
+        if(fakeUsername.equals(inputUsername) && fakePass.equals(inputPassword)){
+            System.out.println("Login");
+        }else{
+            System.out.println("information is false");
+        }
+
     }
 
     @FXML
-protected void onSignup() throws  Exception{
-    Stage stage=new Stage();
-    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup.fxml"));
-    Scene scene = new Scene(fxmlLoader.load() );
-    stage.setTitle("New Teacher page");
-    stage.setScene(scene);
-    stage.show();
-}
-
+    public void onSignup() throws  Exception{
+        Stage stage=new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("signup.fxml"));
+        Scene scene = new Scene(fxmlLoader.load() );
+        stage.setTitle("New Teacher login");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
 
