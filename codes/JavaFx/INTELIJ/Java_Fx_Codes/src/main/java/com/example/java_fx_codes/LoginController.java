@@ -8,39 +8,46 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 
 public class LoginController {
 
-    @FXML
-    private TextField username;
+        @FXML
+        private TextField Username;
+        @FXML
+        private PasswordField Password;
 
-    @FXML
-    private PasswordField password;
 
-    @FXML
-    protected void onLogin() {
-        String fakeUsername="Mahmud";
-        String fakePass="123";
+        @FXML
+        protected void onLogin() throws SQLException, IOException {
+            LoginRepository loginRepository= new LoginRepository();
 
-        String inputUsername=username.getText();
-        String inputPassword=password.getText();
+            String inputUsername = Username.getText();
+            String inputPassword = Password.getText();
 
-        if(fakeUsername.equals(inputUsername) && fakePass.equals(inputPassword)){
-            System.out.println("Login");
-        }else{
-            System.out.println("information is false");
+            if (loginRepository.checkUser(inputUsername, inputPassword)) {
+
+                Stage stage = new Stage();
+                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("students.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                stage.setTitle("students page");
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.out.println("Information is false");
+            }
+
         }
-
-    }
-
-    @FXML
-    public void onSignup() throws  Exception{
-        Stage stage=new Stage();
+        @FXML
+        public void onSignup() throws Exception {
+        Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("signup.fxml"));
-        Scene scene = new Scene(fxmlLoader.load() );
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("New Teacher login");
         stage.setScene(scene);
         stage.show();
-    }
+}
 }
 

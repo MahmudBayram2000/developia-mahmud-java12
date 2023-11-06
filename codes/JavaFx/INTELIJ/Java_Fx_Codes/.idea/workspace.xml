@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a29272be-64f7-41f1-8d71-c60bbfad313f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/SampleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/SignupRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/SignupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/LoginRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/StudentsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/StudentsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/java_fx_codes/students.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javase/yenijava/src/Arrays/AddClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/SignupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/java_fx_codes/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/java_fx_codes/signup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javase/yenijava/src/Exceptions/FinallyException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javase/yenijava/src/Exceptions/MultipleCatchBlocks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javase/yenijava/src/Exceptions/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javase/yenijava/src/Exceptions/ThrowingExcepition.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,7 @@
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "Mahmud__Fx__Project",
     "java.suggest.annotation.dependency": "false",
-    "last_opened_file_path": "C:/Users/mahmu/OneDrive/Desktop/mysql-connector-java-8.0.13.jar",
+    "last_opened_file_path": "C:/github/developia-mahmud-java12/codes/JavaFx/INTELIJ/Java_Fx_Codes/src/main/resources/com/example/java_fx_codes",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
