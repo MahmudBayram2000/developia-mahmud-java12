@@ -5,14 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a29272be-64f7-41f1-8d71-c60bbfad313f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/LoginRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/StudentsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/StudentsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/java_fx_codes/students.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../javase/yenijava/src/Arrays/AddClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/java_fx_codes/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../javase/yenijava/src/Exceptions/FinallyException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../javase/yenijava/src/Exceptions/MultipleCatchBlocks.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../javase/yenijava/src/Exceptions/Test.java" beforeDir="false" />
