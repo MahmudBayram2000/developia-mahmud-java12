@@ -8,6 +8,7 @@ import java.util.Optional;
 import javax.management.RuntimeErrorException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,12 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 
-@RequestMapping(path="/product")
+@RequestMapping(path="/products")
 public class ProductController {
+	
 	
 	@Autowired
 	private ProductRepository productRepository;
 	
+	@PreAuthorize(value="hasAuthority('ROLE_ADD_PRODUCT')")
 	@PostMapping
 	public void addProduct(@RequestBody Product product) {
 		
@@ -35,7 +38,7 @@ public class ProductController {
 		productRepository.save(product);
 			
 	}
-	
+	@PreAuthorize(value="hasAuthority('ROLE_GET_PRODUCT')")
 	@GetMapping 
 	public List<Product> findAll(){
 		
@@ -44,7 +47,7 @@ public class ProductController {
 	
 	
 		
-	
+	@PreAuthorize(value="hasAuthority('ROLE_DELETE_PRODUCT')")
 	@DeleteMapping(path="/{id}")
 	public String deleteById (@PathVariable Integer id) {
 		Optional<Product> finded=productRepository.findById(id);
@@ -58,7 +61,7 @@ public class ProductController {
 		}
 		
 	}
-	
+	@PreAuthorize(value="hasAuthority('ROLE_UPDATE_PRODUCT')")
 	@PutMapping
 	public void update(@RequestBody Product product) {
 		
@@ -85,16 +88,18 @@ public class ProductController {
 		return e.getMessage();
 	}
 	
-	@GetMapping(path="/barcode/{barcode}")
-	public List<Product> findAll(@PathVariable String barcode) {
+	
+	
+	@GetMapping(path="/all")
+	public String test() {
 		
-		productRepository.findByBarcode(barcode);
-		
-		return productRepository.findAll();
+		return "test";
+	}
+	
+	
+	
 	}
 	
 	
 	
 	
-
-}

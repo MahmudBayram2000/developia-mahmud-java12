@@ -70,5 +70,11 @@ public class Product {
 		return "Product [id=" + id + ", name=" + name + ", cost=" + cost + ", price=" + price + ", barcode=" + barcode
 				+ ", register=" + register + "]";
 	}
+	public Product() {
+		super();
+	}
+	
+	
+	
 
 }
