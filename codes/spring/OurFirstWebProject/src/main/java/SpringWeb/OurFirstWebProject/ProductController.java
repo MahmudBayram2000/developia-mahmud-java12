@@ -9,6 +9,7 @@ import javax.management.RuntimeErrorException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 
 @RequestMapping(path="/products")
+@CrossOrigin(origins="*")
 public class ProductController {
 	
 	
@@ -95,6 +97,9 @@ public class ProductController {
 		
 		return "test";
 	}
+	
+
+	
 	
 	
 	
