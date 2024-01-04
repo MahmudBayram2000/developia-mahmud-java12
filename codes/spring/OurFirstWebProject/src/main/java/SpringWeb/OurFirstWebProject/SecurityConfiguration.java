@@ -3,6 +3,7 @@ package SpringWeb.OurFirstWebProject;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.info.ProjectInfoProperties.Build;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -20,11 +21,10 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration {
 	
-	
-	@Autowired
-	public DataSource dataSource;
-	
-	 @Bean
+	 @Autowired
+	    private  DataSource dataSource;
+
+	    @Bean
 	    public UserDetailsService userDetailsService() {
 	        JdbcDaoImpl jdbcDao = new JdbcDaoImpl();
 	        jdbcDao.setDataSource(dataSource);
@@ -48,15 +48,13 @@ public class SecurityConfiguration {
 	        		
 	                .authorizeRequests() 
 	                .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
-	                .requestMatchers(HttpMethod.GET,"/products/all").permitAll()
+	                .requestMatchers(HttpMethod.GET,"/products/productsadding").permitAll()
 	                .anyRequest().authenticated()
 	                .and()
 	                .httpBasic() 
 	                .and()
-	                 
 	                .build();
-	
+       
+	    }
 
-}
-	    
 }
