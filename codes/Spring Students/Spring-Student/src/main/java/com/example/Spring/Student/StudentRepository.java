@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfig
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.cdi.JpaRepositoryExtension;
 
-public interface StudentRepository extends JpaRepository<Student,String> {
+public interface StudentRepository extends JpaRepository<Student, Integer> {
 	
 	
 	List<StudentEntity> findAllByOwner(String username);

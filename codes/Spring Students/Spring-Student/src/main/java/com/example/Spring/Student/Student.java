@@ -17,7 +17,7 @@ public class Student {
 	private String surname;
 	private int old;
 	private String address;
-	
+	private String owner;
 	
 	public Integer getId() {
 		return id;
