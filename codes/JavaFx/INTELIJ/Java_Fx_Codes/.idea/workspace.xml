@@ -6,20 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8783c60d-e7db-44ab-83aa-64e9b09771a8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Spring Students/Spring-Student/src/main/java/com/example/Spring/Student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spring Students/Spring-Student/src/main/java/com/example/Spring/Student/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Spring Students/Spring-Student/src/main/java/com/example/Spring/Student/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spring Students/Spring-Student/src/main/java/com/example/Spring/Student/StudentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/OurFirstWebProject/src/main/java/SpringWeb/OurFirstWebProject/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/OurFirstWebProject/src/main/java/SpringWeb/OurFirstWebProject/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/OurFirstWebProject/src/main/java/SpringWeb/OurFirstWebProject/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/OurFirstWebProject/src/main/java/SpringWeb/OurFirstWebProject/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/OurFirstWebProject/src/main/java/SpringWeb/OurFirstWebProject/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/OurFirstWebProject/src/main/java/SpringWeb/OurFirstWebProject/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/add-product.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/myWebFrontCode.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/product.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/products.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/save-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/save-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/Spring- Web-Front/save-product.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../projects/bookshopping/src/main/java/az/Developia/bookshopping/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../projects/bookshopping/src/main/java/az/Developia/bookshopping/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../projects/bookshopping/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../projects/bookshopping/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
