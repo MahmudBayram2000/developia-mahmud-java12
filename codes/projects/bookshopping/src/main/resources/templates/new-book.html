@@ -10,10 +10,16 @@
  
  <label for="book-name">Ad: </label>
  <input id="book-name" th:field="*{name}"/>
- <label for="book-description">Təsvir: </label>
+ <br><label for="book-description">Təsvir: </label>
  <textarea id="book-description" th:field="*{description}"></textarea>
- <label for="book-price">Qiymət: </label>
+ <br><label for="book-price">Qiymət: </label>
  <input type="number" id="book-price" th:field="*{price}"/>
+ <br><label for="book-author">Müəllif: </label>
+ <input id="book-author" th:field="*{author}"/>
+ <br><label for="book-pageCount">Səhifə sayı: </label>
+ <input type="number" id="book-pageCount" th:field="*{pageCount}"/>
+ <br><label for="book-image">Şəkil: </label>
+ <input id="book-image" th:field="*{name}"/>
  <input type="submit" value="Qeydiyyat"/> 	
 </form>
 
