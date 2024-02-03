@@ -17,11 +17,13 @@
 <body>
 	<a th:href="@{/books/new}" id="new-book-button">Yeni Kitab</a>
 <table>
-	<thead><tr><th>Id</th> <th>Ad</th></tr></thead>
+	<thead><tr><th>Id</th> <th>Ad</th><th>Təsvir</th><th>Qiymət</th></tr></thead>
 	<tbody>
 		<tr th:each="book: ${books}">
 		<td th:text="${book.id}"></td>
 		<td th:text="${book.name}"></td>
+		<td th:text="${book.description}"></td>
+		<td th:text="${book.price}"></td>
 		</tr>
 	</tbody>
 </table>
