@@ -10,14 +10,26 @@
 	td:hover{color: blue;cursor: pointer;}
 	#new-book-button{display: block; padding: 5px 10px;background-color: rgb(55, 232, 0);
 	 width: 150px;text-align: center;border-radius: 10px;text-decoration: none;}
-	#new-book-button:hover{cursor: pointer;}
-	
+	#new-book-button:hover{cursor: pointer;}	
 </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+	<script type="text/javascript" charset="utf8"
+	src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+	<script>
+		$(document).ready(function(){
+		$('#books-table').DataTable();
+		});
+	</script>
+
 </head>
+
 <body>
 	<a th:href="@{/books/new}" id="new-book-button">Yeni Kitab</a>
 	<a th:href="@{/home}">Əsas səhifə</a>
-<table>
+<table id="books-table">
 	<thead><tr><th>Id</th> <th>Ad</th><th>Təsvir</th><th>Qiymət</th><th>Müəllif</th><th>Səhifə sayı</th><th>Şəkil</th></tr></thead>
 	<tbody>
 		<tr th:each="book: ${books}">
