@@ -31,6 +31,7 @@ public class BookController {
 	public String OpenNewBookPage(Model model){
 		Book book=new Book();
 		model.addAttribute("book", book);
+		model.addAttribute("header", "Yeni kitab");
 		return "new-book";
 	}
 	
@@ -66,7 +67,8 @@ public class BookController {
 		}else {
 			
 		}	
-		model.addAttribute("book", book);	
+		model.addAttribute("book", book);
+		model.addAttribute("header", "Kitab redaktəsi");
 		return "new-book";
 	}
 
