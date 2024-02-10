@@ -2,13 +2,19 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title>Home Page</title>
+<title>Giriş</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 <div th:replace="menu :: menu"></div>
-<h1>Welcome to my Home Page</h1>
-<a th:href="@{/books}">Kitablarin siyahısı</a><br>
-<a th:href="@{/logout}">Çıxış</a>
+<div class="container">
+<h1>Kitab alış-verişi saytımıza xoş gəlmisiz</h1>
+<a class="btn btn-primary" th:href="@{/books}">Kitablarin siyahısı</a>
+<a class="btn btn-warning" th:href="@{/customer}">Kitablarin alış-verişinə başla</a>
+<a class="btn btn-success" th:href="@{/orders}">Sifarişlərim</a>
+<a class="btn btn-danger" th:href="@{/logout}">Çıxış</a>
+	
+</div>
+
 </body>	
 </html>
