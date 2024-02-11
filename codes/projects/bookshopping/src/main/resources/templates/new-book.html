@@ -21,11 +21,12 @@
   
   <div class="form-group"><label for="book-description">Təsvir: </label>
   <textarea class="form-control" id="book-description" th:field="*{description}"></textarea>
-  <span style="color: red;" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span></div>
+  <span style="color: red ;" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span></div>
   
  
   <div class="form-group"><label for="book-price">Qiymət: </label>
-  <input class="form-control" type="number" id="book-price" th:field="*{price}"/></div>
+  <input class="form-control" type="number" id="book-price" th:field="*{price}"/>
+  <span style="color: red;"  th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span></div>
   
   
   <div class="form-group"><label for="book-author">Müəllif: </label>
