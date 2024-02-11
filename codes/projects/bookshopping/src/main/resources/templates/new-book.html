@@ -20,7 +20,8 @@
   
   
   <div class="form-group"><label for="book-description">Təsvir: </label>
-  <textarea class="form-control" id="book-description" th:field="*{description}"></textarea></div>
+  <textarea class="form-control" id="book-description" th:field="*{description}"></textarea>
+  <span style="color: red;" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span></div>
   
  
   <div class="form-group"><label for="book-price">Qiymət: </label>
