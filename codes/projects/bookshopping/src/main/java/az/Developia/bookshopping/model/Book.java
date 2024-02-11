@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Book {
@@ -13,6 +14,8 @@ public class Book {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	@NotEmpty(message="Boş qoymaq olmaz")
+	@Size(min=2,message="Minimum 2 simvol yazmaq lazımdır")
+	@Size(max=30,message="Maksimum 30 simvol yazmaq lazımdır")
 	private String name;
 	private String description;
 	private Double price;
