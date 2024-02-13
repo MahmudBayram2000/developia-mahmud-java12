@@ -1,5 +1,6 @@
 package az.Developia.bookshopping.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,8 +20,12 @@ public class CustomerController {
 	
 	
 	@GetMapping(path="/customer")
-	public String ShowCustomerPage() {
-
+	public String ShowCustomerPage(Model model) {
+		ArrayList<String> books=new ArrayList<>();
+		for(int i=0; i<=100;i++) {
+			books.add("");
+		}
+        model.addAttribute("books", books);
 		return "customer";
 	}
 	
