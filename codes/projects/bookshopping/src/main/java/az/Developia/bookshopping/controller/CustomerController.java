@@ -18,13 +18,12 @@ import az.Developia.bookshopping.model.Book;
 @Controller
 public class CustomerController {
 	
+	@Autowired
+	private BookDAO bookDAO;
 	
 	@GetMapping(path="/customer")
 	public String ShowCustomerPage(Model model) {
-		ArrayList<String> books=new ArrayList<>();
-		for(int i=0; i<=100;i++) {
-			books.add("");
-		}
+		List<Book> books=bookDAO.findAll();
         model.addAttribute("books", books);
 		return "customer";
 	}
