@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,11 +12,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import az.Developia.bookshopping.dao.UserDAO;
 import az.Developia.bookshopping.model.Book;
 import az.Developia.bookshopping.model.User;
 
 @Controller
 public class UserController {
+	
+	@Autowired 
+	private UserDAO userDAO;
+	
+	
 	
 	private boolean userCreated=false;
 	
@@ -40,7 +47,12 @@ public class UserController {
 		if(result.hasErrors()) {
 			return "create-account";
 		}
-		System.out.println(user);
+		//System.out.println(user);
+		boolean userExists=userDAO.createUser(user);
+		if(userExists) {
+			model.addAttribute("userExists", "");
+			return "create-account";
+		}
 		userCreated=true;
 		return "redirect:/show-login";
 		
