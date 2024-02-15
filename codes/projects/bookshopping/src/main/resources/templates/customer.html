@@ -1,68 +1,92 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="utf-8">
-<title>Alıcı</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link th:href="@{/styles/customer.css}" rel="stylesheet">
+	<meta charset="utf-8">
+	<title>Alıcı</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link th:href="@{/styles/customer.css}" rel="stylesheet">
 </head>
+
 <body>
-<!-- HTML BEGIN -->
-<div th:replace="menu :: menu"></div>
-<div id="main-content">
-</div>
+	<!-- HTML BEGIN -->
+	<div th:replace="menu :: menu"></div>
+	<div id="main-content">
+	</div>
 
-<button id='open-basket-btn' class='btn btn-primary'>Səbət <span class='badge badge-light'>0</span></button>
-<input id='search-input' class='form-control' placeholder='Axtarış'/>
+	<button id='open-basket-btn' class='btn btn-primary'>Səbət <span class='badge badge-light'
+			id="basket-book-count">0</span></button>
+	<input id='search-input' class='form-control' placeholder='Axtarış' />
 
-<!-- HTML END -->
-<script>
+	<!-- HTML END -->
+	<script>
 
-// JAVASCRIPT BEGIN
-// REFRESH  BEGIN
-var xht = new XMLHttpRequest();
-xht.onreadystatechange = function(){
-if (this.readyState == 4 && this.status == 200){
-var responseJSON=this.responseText;
-var booksArray=JSON.parse(responseJSON);
-console.log(booksArray);
-var mainContent=document.getElementById('main-content');
-var mainContentHTML="";
-for(var i=0;i<booksArray.length;i++){
-var book=booksArray[i];
-mainContentHTML+="<div class='book-container'>";
-mainContentHTML+="<div class='book'>";
-mainContentHTML+="<span class='book-image'></span>";
-mainContentHTML+="<span class='book-name' title='"+
-book.name+"'>"+book.name+"</span>";
-mainContentHTML+="<span class='book-price' title='"+
-book.price+"'>"+book.price+"</span>";
-mainContentHTML+="<span class='book-description' title='"+
-book.description+"'>"+book.description+"</span>";
-mainContentHTML+="<span class='book-author' title='"+
-book.author+"'>"+book.author+"</span>";
-mainContentHTML+="<span class='book-page-count' title='"+
-book.pageCount+"'>"+book.pageCount+"</span> ";
-mainContentHTML+="<div class='add-to-basket'><button "+
-"class='add-to-basket-btn btn btn-primary' onclick='addToBasket("+book.id+")' >Səbətə at</button></div>";
-mainContentHTML+="</div></div>";
-}
+		// JAVASCRIPT BEGIN
+		// REFRESH  BEGIN
+		var xht = new XMLHttpRequest();
+		var booksArrayGlobal = [];
+		var basketBooks = [];
+		var basketBooksFromStorage=localStorage.getItem('basketBooks');
+		
+		var openBasketButton = document.getElementById('open-basket-btn');
+		var basketBookCount = document.getElementById('basket-book-count');
+		xht.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				var responseJSON = this.responseText;
+				var booksArray = JSON.parse(responseJSON);
+				console.log(booksArray);
+				booksArrayGlobal = booksArray.slice();
 
-mainContent.innerHTML=mainContentHTML;
+				var mainContent = document.getElementById('main-content');
+				var mainContentHTML = "";
+				for (var i = 0; i < booksArray.length; i++) {
+					var book = booksArray[i];
+					mainContentHTML += "<div class='book-container'>";
+					mainContentHTML += "<div class='book'>";
+					mainContentHTML += "<span class='book-image'></span>";
+					mainContentHTML += "<span class='book-name' title='" +
+						book.name + "'>" + book.name + "</span>";
+					mainContentHTML += "<span class='book-price' title='" +
+						book.price + "'>" + book.price + "</span>";
+					mainContentHTML += "<span class='book-description' title='" +
+						book.description + "'>" + book.description + "</span>";
+					mainContentHTML += "<span class='book-author' title='" +
+						book.author + "'>" + book.author + "</span>";
+					mainContentHTML += "<span class='book-page-count' title='" +
+						book.pageCount + "'>" + book.pageCount + "</span> ";
+					mainContentHTML += "<div class='add-to-basket'><button " +
+						"class='add-to-basket-btn btn btn-primary' onclick='addToBasket(" + book.id + ")' >Səbətə at</button></div>";
+					mainContentHTML += "</div></div>";
+				}
 
-}
-};
-xht.open("GET","/rest/books",true);
-xht.send();
-// REFRESH END
-// FUNCTIONS BEGIN
+				mainContent.innerHTML = mainContentHTML;
 
-function addToBasket(bookId){
-	alert(bookId)
-}
+			}
+		};
+		xht.open("GET", "/rest/books", true);
+		xht.send();
+		// REFRESH END
+		// FUNCTIONS BEGIN
+
+		function addToBasket(bookId) {
+			//alert(bookId)
+			for (var i = 0; i < booksArrayGlobal.length; i++) {
+				if (booksArrayGlobal[i].id == bookId) {
+					basketBooks.push(booksArrayGlobal[i]); break;
+				}
+			}
+			//alert(JSON.stringify(basketBooks));
+			openBasketButton.style.display = 'none';
+			basketBookCount.innerHTML = basketBooks.length;
+			localStorage.setItem('basketBooks', JSON.stringify(basketBooks));
+			setTimeout(function () {openBasketButton.style.display = 'block';}, 300);
+
+
+		}
 // FUNCTIONS END
 // JAVASCRIPT END
 
-</script>
-</body>	
+	</script>
+</body>
+
 </html>
