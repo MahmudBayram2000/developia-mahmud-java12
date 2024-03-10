@@ -1,7 +1,6 @@
 package az.Developia.bookshopping.config;
 
 import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -19,6 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET, "/").permitAll()
 		.antMatchers(HttpMethod.GET, "/create-account").permitAll()
 		.antMatchers(HttpMethod.POST, "/create-account-process").permitAll()
+		.antMatchers(HttpMethod.GET, "/customer").permitAll()
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/show-login")
 		.loginProcessingUrl("/authenticate-user").permitAll()
