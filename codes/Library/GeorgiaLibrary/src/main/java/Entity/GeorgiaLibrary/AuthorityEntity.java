@@ -1,6 +1,7 @@
 package Entity.GeorgiaLibrary;
 
 import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +17,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@SuppressWarnings("unused")
 @Entity
 @Data
 @Table(name = "authorities")
